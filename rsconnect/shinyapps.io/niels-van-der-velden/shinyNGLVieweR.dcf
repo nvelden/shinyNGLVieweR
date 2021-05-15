@@ -5,8 +5,8 @@ account: niels-van-der-velden
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 4102627
-bundleId: 4576590
+bundleId: 4594484
 url: https://niels-van-der-velden.shinyapps.io/shinyNGLVieweR/
-when: 1620555057.92368
+when: 1620918257.57723
 asMultiple: FALSE
 asStatic: FALSE

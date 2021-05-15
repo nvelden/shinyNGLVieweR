@@ -22,6 +22,12 @@ rhub::check_for_cran()
 
 # Deploy
 
+#Load packages not on CRAN directly from github
+#install.packages("remotes")
+#remotes::install_github("nvelden/NGLVieweR")
+
+
+
 ## RStudio ----
 ## If you want to deploy on RStudio related platforms
 golem::add_rstudioconnect_file()

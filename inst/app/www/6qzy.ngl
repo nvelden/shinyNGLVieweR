@@ -2,20 +2,20 @@
 type,colorScheme,colorValue,selection,visible
 hide,residueindex,#0000FF,*,FALSE
 #SURFACE
-colorScheme,colorValue,selection,opacity,visible
-uniform,#FFFFFF,*,1,FALSE
+type,colorScheme,colorValue,selection,visible
+hide,residueindex,#0000FF,*,FALSE
 #LIGAND
 ligand,colorScheme,colorValue,waterIon
-hide,element,#00FF00,
+hide,element,#00FF00,NA
 #STAGE
 cameraType,backgroundColor,lightIntensity,clipNear,clipFar
 perspective,black,1,0,100
 #SELECTIONS
 row,type,id,name,selection,colorValue,colorScheme,opacity,structureType
-1,selection,selection-1,peptide,:B,#7FFF00,element,1,cartoon
-2,selection,selection-2,SAH,501,#7F7F7F,element,1,ball+stick
 5,selection,selection-5,structure,:A,#666666,element,0.59,cartoon
 6,selection,selection-6,peptide interacting,63 or 66 or 72 or 76 or 98 or 172,#FF6A6A,element,1,ball+stick
+2,selection,selection-f296b3dc-28c2-4d83-874e-6d722d615fcf,peptide,:B,#7FFF00,element,1,cartoon
+3,selection,selection-cb05d65c-c76d-42fa-911e-719a8ab77647,SAH,[SAH],#7F7F7F,element,1,ball+stick
 #LABELS
 row,type,id,name,labelFormat,selection,textColor,labelSize,fixedSize,labelGrouping,xOffset,yOffset,zOffset,labelBackground,labelbackgroundColor,labelbackgroundOpacity
 3,label,label-3,peptide,peptide,:B and 397,#FFFFFF,3.7,FALSE,residue,0,0.7,0,TRUE,#00FF00,0.4
@@ -23,11 +23,8 @@ row,type,id,name,labelFormat,selection,textColor,labelSize,fixedSize,labelGroupi
 5,label,label-5,resnames,[%(resname)s]%(resno)s,63 or 66 or 72 or 76 or 98 or 172,#FFFFFF,2.6,FALSE,residue,0,0.7,0,FALSE,#666666,1
 #CONTACTS
 row,type,id,name,selection,selectionA,selectionB,labelUnit,labelVisible,contactTypes
-1,contact,contact-699d86e4-e0ac-475a-a312-114430d7efa8,contact,*,:A,:B,none,FALSE,hydrogenBond
-2,contact,contact-856954b2-36b0-45a1-8146-7743a9a070fa,contact-2,*,:A and 72,:B,angstrom,TRUE,
-3,contact,contact-bff2422d-7de2-4ed2-8a52-a698e3581857,contact-3,*,:A,:A,angstrom,TRUE,hydrophobic
 #PDB
-TITLE 6QZY                                                                      
+TITLE                                                                           
 MODEL 1                                                                         
 ATOM      1  N   THR A   7      26.351  11.063  39.290  1.00 64.85           N
 ATOM      2 CA   THR A   7      27.162  11.997  40.126  1.00 64.79           C
