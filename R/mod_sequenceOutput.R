@@ -93,12 +93,12 @@ mod_sequenceOutput_server <- function(input, output, session, globalSession, r) 
   Viewer_proxy <- NGLVieweR_proxy("NGLVieweROutput_ui_1-structure", session = globalSession)
 
   observe({
-
     # make reactive
-    if (r$aa_clicked == "" || is.null(r$aa_clicked)) {
+    if (is.null(r$aa_clicked) || length(r$aa_clicked) == 0 || all(r$aa_clicked == "")) {
       Viewer_proxy %>%
         updateSelection("aa_clicked", sele = "none")
     } else {
+      print(aa_clicked_to_ngl(r$aa_clicked, r$chainname, input$selectedChain))
       Viewer_proxy %>%
         updateSelection("aa_clicked", sele = aa_clicked_to_ngl(r$aa_clicked, r$chainname, input$selectedChain))
     }
