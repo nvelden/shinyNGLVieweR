@@ -32,16 +32,17 @@ mod_NGLVieweROutput_server <- function(input, output, session, r) {
       r$fileInput$fileExt <- "pdb"
       r$fileInput$name <- "7cid"
     }
+    
     viewerOutput <- NGLVieweR(r$fileInput$PDB, format = r$fileInput$fileExt) %>%
       loadStage(r$fileInput$stage) %>%
       setQuality("high") %>%
       setFocus(0) %>%
       setSpin(FALSE) %>%
       addRepresentation("ball+stick", param = list(
-        name = "aa_clicked", visible = TRUE,
-        sele = "none", color = "element", colorValue = "#33FF19"
+       name = "aa_clicked", visible = TRUE,
+       sele = "none", color = "element", colorValue = "#33FF19"
       )) %>%
-      
+
       # Load from .ngl file
       loadLabels(r$fileInput$labels) %>%
       loadSelections(r$fileInput$selections) %>%
@@ -49,7 +50,7 @@ mod_NGLVieweROutput_server <- function(input, output, session, r) {
       loadContacts(r$fileInput$contacts) %>%
       loadStructure(r$fileInput$structure, format = r$fileInput$fileExt) %>%
       loadSurface(r$fileInput$surface)
-    
+      
     isolate({ 
     r$selection$loaded <- FALSE 
     r$label$loaded <- FALSE 

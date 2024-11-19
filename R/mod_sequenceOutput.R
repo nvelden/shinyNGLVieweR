@@ -98,7 +98,6 @@ mod_sequenceOutput_server <- function(input, output, session, globalSession, r) 
       Viewer_proxy %>%
         updateSelection("aa_clicked", sele = "none")
     } else {
-      print(aa_clicked_to_ngl(r$aa_clicked, r$chainname, input$selectedChain))
       Viewer_proxy %>%
         updateSelection("aa_clicked", sele = aa_clicked_to_ngl(r$aa_clicked, r$chainname, input$selectedChain))
     }

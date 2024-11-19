@@ -21,7 +21,7 @@ readFile <- function(file) {
     contacts = NULL,
     fileExt = NULL
   )
-  
+
   #If code is entered
   fileExt <- tools::file_ext(file)
   if(nchar(file) < 8 && tools::file_ext(file) == ""){
@@ -38,7 +38,7 @@ readFile <- function(file) {
   
   NGL <- readr::read_lines(file)
   File$fileExt <- "pdb"
-  File$PDB <- NGL
+  File$PDB <- paste(NGL, collapse = "\n")
   # Get file start
   structure_start <- grep(pattern = "#STRUCTURE", x = NGL)
   surface_start <- grep(pattern = "#SURFACE", x = NGL)
