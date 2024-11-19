@@ -52,25 +52,25 @@ readFile <- function(file) {
   
   # load data frames
   if(surface_start - structure_start > 1){
-    File$structure <- data.frame(readr::read_csv(file, skip = structure_start, n_max = surface_start - (structure_start + 2)))
+    File$structure <- data.frame(readr::read_csv(file, skip = structure_start, n_max = surface_start - (structure_start + 2), show_col_types = FALSE))
   }
   if(ligand_start - surface_start > 1){
-    File$surface <- data.frame(readr::read_csv(file, skip = surface_start, n_max = ligand_start - (surface_start + 2)))
+    File$surface <- data.frame(readr::read_csv(file, skip = surface_start, n_max = ligand_start - (surface_start + 2), show_col_types = FALSE))
   }
   if(stage_start - ligand_start > 1){
-    File$ligand <- data.frame(readr::read_csv(file, skip = ligand_start, n_max = stage_start - (ligand_start + 2)))
+    File$ligand <- data.frame(readr::read_csv(file, skip = ligand_start, n_max = stage_start - (ligand_start + 2), show_col_types = FALSE))
   }
   if(sel_start - stage_start > 1){
-    File$stage <- data.frame(readr::read_csv(file, skip = stage_start, n_max = sel_start - (stage_start + 2)))
+    File$stage <- data.frame(readr::read_csv(file, skip = stage_start, n_max = sel_start - (stage_start + 2), show_col_types = FALSE))
   }
   if ((labels_start - (sel_start +1)) > 1) {
-    File$selections <- data.frame(readr::read_csv(file, skip = sel_start, n_max = labels_start - (sel_start + 2)))
+    File$selections <- data.frame(readr::read_csv(file, skip = sel_start, n_max = labels_start - (sel_start + 2), show_col_types = FALSE))
   }
   if ((contacts_start - (labels_start + 1)) > 1) {
-    File$labels <- data.frame(readr::read_csv(file, skip = labels_start, n_max = contacts_start - (labels_start + 2)))
+    File$labels <- data.frame(readr::read_csv(file, skip = labels_start, n_max = contacts_start - (labels_start + 2), show_col_types = FALSE))
   }
   if ((PDB_start - (contacts_start + 1)) > 1) {
-    File$contacts <- data.frame(readr::read_csv(file, skip = contacts_start, n_max = PDB_start - (contacts_start + 2)))
+    File$contacts <- data.frame(readr::read_csv(file, skip = contacts_start, n_max = PDB_start - (contacts_start + 2), show_col_types = FALSE))
   }
   return(File)
 }
