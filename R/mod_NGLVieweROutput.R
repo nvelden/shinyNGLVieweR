@@ -13,7 +13,7 @@ mod_NGLVieweROutput_ui <- function(id) {
     NGLVieweROutput(ns("structure")),
     div(
       id = ns("render-loader"),
-      style = "position: absolute; z-index: 999; top: 91vh; padding: 25px; color: grey;",
+      style = "position: absolute; z-index: 999; bottom: 0; padding: 25px; color: grey;",
       HTML('<div class="fa-1x"><i class="fas fa-spinner fa-spin"></i> loading...</div>')
     )
   )

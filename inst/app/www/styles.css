@@ -34,16 +34,39 @@
 .box.box-solid.box-primary{
   border-color: #fff;
 }
+/* Keep NGL canvas focus from moving the dashboard viewport. The sidebar keeps
+   its own vertical scrollbar. */
+html, body{
+  height: 100%;
+  overflow: hidden;
+}
+.wrapper, .content-wrapper{
+  overflow: hidden !important;
+}
+/* Fill the space below the header: sequence box on top, viewer takes the rest */
 .content{
   padding: 10px 0 0 0;
+  height: calc(100vh - 50px);
+  height: calc(100dvh - 50px);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 .content-wrapper{
   background-color: black;
 }
 
 /* NGLVieweR output */
+#sequenceOutput_ui_1-boxPlaceholder{
+  flex: 0 0 auto;
+  display: flow-root;
+}
+
 #NGLVieweROutput_ui_1-structure{
-  height: calc(91vh) !important;
+  flex: 1 1 auto;
+  min-height: 0;
+  height: auto !important;
 }
 
 #labelcontrols_ui_1-labelBox .btn-primary{
